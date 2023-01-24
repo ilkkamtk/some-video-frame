@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --bezel: 0.4rem;
+            --radius: 8px;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .phone {
+            position: relative;
+            margin: auto;
+            height: calc(100vh - 2 * var(--bezel));
+            width: calc(0.5625 * (100vh - 2 * var(--bezel)));
+            border: var(--bezel) solid black;
+            border-radius: var(--radius);
+            background-color: black;
+        }
+
+
+        .phone video {
+            width: 100%;
+            border-radius: calc(var(--radius) / 2);
+        }
+
+
+        .gloss {
+            border-radius: var(--radius);
+            margin: calc(-1 * var(--bezel));
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            width: calc(100% + 2 * var(--bezel));
+            height: calc(100% + 2 * var(--bezel));
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0) 4%, rgba(255, 255, 255, 0.6) 19%, rgba(255, 255, 255, 0) 30%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="phone">
+        <video src="video.mp4" controls></video>
+        <div class="gloss"></div>
+    </div>
+</body>
+
+</html>
